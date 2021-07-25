@@ -1,0 +1,106 @@
+.client {
+    padding-bottom: 50px;
+    &-list {
+        display: flex;
+    }
+    &-item {
+        flex: 1;
+        padding: 45px 25px;
+        border: 1px solid #eee;
+        border-radius: 20px;
+        text-align: center;
+    }
+    &-item:not(:first-child) {
+        margin-left: 70px;
+    }
+    &-img {
+        width: 120px;
+        height: 120px;
+        border-radius: 100rem;
+        object-fit: cover;
+        margin: 0 auto;
+        margin-bottom: 25px;
+    }
+    &-name {
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    &-position {
+        color: $gray;
+        font-size: 15px;
+        display: block;
+        text-align: center;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #eee;
+    }
+    &-content {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-break: break-word;
+        margin-bottom: 20px;
+    }
+    &-rate {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i {
+            color: $star;
+            font-size: 20px;
+            margin: 0 5px;
+        }
+    }
+    &-add {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    &-arrow {
+        padding: 15px;
+        font-weight: 300;
+        cursor: pointer;
+    }
+    &-arrow:not(:first-child) {
+        margin-left: 30px;
+    }
+    @media (max-width: 1023px) {
+        &-list {
+            flex-direction: column;
+            width: 100%;
+            display: grid;
+            justify-content: flex-start;
+            grid-auto-columns: 60%;
+            grid-auto-flow: column;
+            grid-gap: 15px;
+            overflow: auto;
+            overflow-y: hidden;
+            scroll-snap-type: x mandatory;
+            scroll-snap-stop: always;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            -webkit-overflow-scrolling: touch;
+            scroll-padding: 1rem;
+            grid-template-columns: unset;
+            &::-webkit-scrollbar {
+                display: none;
+                width: 0;
+            }
+            & > * {
+                scroll-snap-align: start;
+            }
+        }
+        &-item:not(:first-child) {
+            margin-left: 0;
+        }
+    }
+    @media (max-width: 739px) {
+        &-list {
+            grid-auto-columns: 90%;
+        }
+    }
+}
